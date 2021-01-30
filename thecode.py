@@ -24,8 +24,8 @@ with open("list_of_countries_and_recipes.csv", 'r') as recipe_file:
 #print(random.choice(["q", "w", "r"]))
 
 def get_random_recipe():
-    ''' ()
-
+    ''' () -> (value1, value2, value3)
+        Return a Tuple with three random values from the dictionary.
     '''
     random_continent = random.choice(list(overall_food_dict.keys()))
     random_country = random.choice(list(overall_food_dict[random_continent].keys()))
