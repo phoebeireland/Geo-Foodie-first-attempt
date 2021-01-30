@@ -1,8 +1,13 @@
 import tkinter as tk
-
 import random
 
-mylist = 
+food_dictonary = {}
+
+with open("list_of_countries_and_recipes.csv", 'r') as recipe_file:
+    line = recipe_file.readline()
+    print(line)
+
+print(food_dictonary)
 
 
 root = tk.Tk()
@@ -16,7 +21,7 @@ label.pack()
 
 
 def write_slogan():
-    choice = random.choice(mylist)
+    choice = random.choice(food_dictonary)
     # print(choice)
     label.config(text=choice)
 
