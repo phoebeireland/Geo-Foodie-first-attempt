@@ -7,7 +7,7 @@ with open("list_of_countries_and_recipes.csv", 'r') as recipe_file:
     recipe_file.readline()
     lines = recipe_file.readlines()
     for line in lines:
-        continent, country, recipe_name, recipe_link = line.split(',')
+        continent, country, recipe_name, recipe_link, veg = line.split(',')
 
         if continent not in overall_food_dict:
             overall_food_dict[continent]= {}
@@ -15,11 +15,24 @@ with open("list_of_countries_and_recipes.csv", 'r') as recipe_file:
         if country not in overall_food_dict[continent]:
             overall_food_dict[continent][country]= {}
 
-        overall_food_dict[continent][country][recipe_name]= recipe_link
+        recipe= {'link': recipe_link, "Vegetarian" : veg}
 
-#print(overall_food_dict['North America']['Cuba']["Cuban Sandwich"])
+        overall_food_dict[continent][country][recipe_name]= recipe
 
-#choice_overall_dict = ""
+#print(overall_food_dict['North America']['Cuba']["Cuban Sandwich"]['link'])
+
+#print(random.choice(["q", "w", "r"]))
+
+def get_random_recipe():
+    ''' ()
+
+    '''
+    random_continent = random.choice(list(overall_food_dict.keys()))
+    random_country = random.choice(list(overall_food_dict[random_continent].keys()))
+    random_continent = "North America"
+    random_country = "Cuba"
+    random_recipe = random.choice(list(overall_food_dict[random_continent][random_country].keys()))
+    return random_continent, random_country, random_recipe
 
 root = tk.Tk()
 root.title("Geo-Foodie")
@@ -32,9 +45,11 @@ label.pack()
 
 
 def write_slogan():
-    choice = random.choice()
+    continent_choice, country_choice, recipe_choice = get_random_recipe()
+    link = overall_food_dict[continent_choice][country_choice][recipe_choice]['link']
+    argh = continent_choice + " " + country_choice + " " + recipe_choice + " " + link
     # print(choice)
-    label.config(text=choice)
+    label.config(text=argh)
 
 
 tk.Button(frame, text="QUIT", fg="red", command=quit).pack(side=tk.LEFT)
