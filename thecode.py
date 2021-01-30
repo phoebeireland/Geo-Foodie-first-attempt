@@ -2,18 +2,11 @@ import tkinter as tk
 
 import random
 
-mylist = [
-    "paint with Bob Ross",
-    "picnic",
-    "massage",
-    "charcuterie board",
-    "movie night",
-    "blindfolded dinner",
-]
+mylist = 
 
 
 root = tk.Tk()
-root.title("Date Night")
+root.title("Geo-Foodie")
 frame = tk.Frame(root)
 frame.pack()
 
@@ -30,7 +23,7 @@ def write_slogan():
 
 tk.Button(frame, text="QUIT", fg="red", command=quit).pack(side=tk.LEFT)
 
-slogan = tk.Button(frame, text="Press me", command=write_slogan)
+slogan = tk.Button(frame, text="Generate Recipe", command=write_slogan)
 slogan.pack(side=tk.LEFT)
 
 root.mainloop()
