@@ -19,6 +19,27 @@
         </header>
 
         <form>
+            <label for="specific_continent">Would you like to narrow the search to a specific continent?</label>
+            <select id="specific_continent" name="specific_continent">
+                <option value="no">No</option>
+                <option value="yes-north-america">Yes- North America</option>
+                <option value="yes-south-america">Yes- South America</option>
+                <option value="yes-europe">Yes- Europe</option>
+                <option value="yes-africa">Yes-Africa</option>
+                <option value="yes-asia">Yes-Asia</option>
+                <option value="yes-oceania">Yes-Oceania</option>
+            </select>
+
+            <label for="type_dish">What type of dish would you like?</label>
+            <select id="type_dish" name="type_dish">
+                <option value="random">Random</option>
+                <option value="main">Main</option>
+                <option value="side">Side</option>
+                <option value="soup-or-stew">Soup or Stew</option>
+                <option value="dessert">Dessert</option>
+            </select>
+            <input id="veg" name="vegetarian" type="checkbox">
+            <label for="veg">Vegetarian</label>
             <input type="submit" value="Let's get cooking">
         </form>
     </body>
