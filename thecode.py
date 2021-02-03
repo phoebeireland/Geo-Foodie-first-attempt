@@ -29,8 +29,8 @@ def get_random_recipe():
     '''
     random_continent = random.choice(list(overall_food_dict.keys()))
     random_country = random.choice(list(overall_food_dict[random_continent].keys()))
-    random_continent = "North America"
-    random_country = "Cuba"
+    #random_continent = "North America"
+    #random_country = "Cuba"
     random_recipe = random.choice(list(overall_food_dict[random_continent][random_country].keys()))
     return random_continent, random_country, random_recipe
 
